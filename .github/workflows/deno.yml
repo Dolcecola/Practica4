@@ -29,7 +29,10 @@ jobs:
       - name: Run linter
         run: deno lint
 
+      # - name: Run tests
+      # run: deno test -A
+
       - name: Deploy to Deno Deploy
-        uses: deno-deploy/action@v1
+        uses: denoland/setup-deno-deploy@v1  # Acción correcta para desplegar en Deno Deploy
         with:
           project_id: ${{ secrets.DENO_PROJECT_ID }} # Aquí debes agregar tu DENO_PROJECT_ID en los secrets de GitHub
